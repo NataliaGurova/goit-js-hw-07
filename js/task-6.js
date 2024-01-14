@@ -25,7 +25,7 @@ function getRandomHexColor() {
 function createBoxes(amount) {
   let boxes = "";
 
-  for (let i = 0; i <= amount; i++) {
+  for (let i = 0; i < amount; i++) {
     const color = getRandomHexColor();
      boxes += `<div style="background-color: ${color}; width: ${k + 10 * i}px; height: ${k + 10 * i}px"></div>`;
   }
