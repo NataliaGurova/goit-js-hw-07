@@ -1,44 +1,27 @@
-// Напиши клас StringBuilder, який приймає один параметр initialValue — довільний рядок, який записується у приватну властивість value об'єкта, що створюється.
 
-// Оголоси наступні методи класу:
+const textInput = document.querySelector("#name-input");
+const output = document.querySelector("#name-output");
 
-// getValue() — повертає поточне значення приватної властивості value.
-// padEnd(str) — отримує параметр str (рядок) і додає його в кінець значення приватної властивості value об'єкта, який викликає цей метод.
-// padStart(str) — отримує параметр str (рядок) і додає його на початок значення приватної властивості value об'єкта, який викликає цей метод.
-// padBoth(str) — отримує параметр str (рядок) і додає його на початок і в кінець значення приватної властивості  value об'єкта, який викликає цей метод.
-// Візьми код нижче з ініціалізацією екземпляра й викликами методів і встав його після оголошення класу для перевірки коректності роботи. У консоль будуть виведені результати їх роботи. Будь ласка, нічого там не змінюй.
-
-
-class StringBuilder {
-  #value;
-
-  constructor(value) {
-    this.#value = value;
-  }
-
-  getValue() {
-    return this.#value;
-  }
-
-  padEnd(str) {
-    this.#value += str;
-  }
+textInput.addEventListener("input", onInput);
   
-  padStart(str) {
-    this.#value = str + this.#value;
-  }
-  
-  padBoth(str) {
-    this.#value = str + this.#value + str;
-  }
-}
+  function onInput(evt) {
+  const textName = evt.target.value.trim();
+ 
+ output.textContent = textName || "Anonymous";
+};
 
+// function onInputChange(evt) {
+//   output.textContent = textInput.value;
+//     const text = output.textContent.trim();
+//   if (text.value !== "") {
+//     return text.value
+//   } else {
+//     text.value = "Anonymous";
+//   }
+// }
+// textInput.addEventListener("input", (event) => {
 
-const builder = new StringBuilder(".");
-console.log(builder.getValue()); // "."
-builder.padStart("^");
-console.log(builder.getValue()); // "^."
-builder.padEnd("^");
-console.log(builder.getValue()); // "^.^"
-builder.padBoth("=");
-console.log(builder.getValue()); // "=^.^="
+//   output.textContent = event.currentTarget.value;
+// });
+
+// "Anonymous"
