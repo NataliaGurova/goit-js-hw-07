@@ -10,7 +10,7 @@ buttonCreate.addEventListener("click", handleClickCreate)
 buttonDestroy.addEventListener("click", handleClickDestroy)
 
 let amount = 0;
-let k = 30;
+const k = 30;
 
 function handleInput() {
   amount = Number(inputAmount.value);  
@@ -22,21 +22,21 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-function createBoxes(amount) {
+function createBoxes(amount) { 
   let boxes = "";
 
   for (let i = 0; i < amount; i++) {
+    if (amount >= 1 && amount <= 100){
     const color = getRandomHexColor();
-     boxes += `<div style="background-color: ${color}; width: ${k + 10 * i}px; height: ${k + 10 * i}px"></div>`;
+     boxes += `<div style="background-color: ${color}; width: ${k + 10 * i}px; height: ${k + 10 * i}px"></div>`;}
   }
   return boxes;
 }
 
 function handleClickCreate() {
+  myDiv.innerHTML = "";
   const markup = createBoxes(amount);
-  if (amount >= 1 && amount <= 100) {
-    myDiv.insertAdjacentHTML("afterbegin", markup);
-  }
+  myDiv.insertAdjacentHTML("afterbegin", markup);
   inputAmount.value = "";
 }
 

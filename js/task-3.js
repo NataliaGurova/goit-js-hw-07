@@ -10,18 +10,3 @@ textInput.addEventListener("input", onInput);
  output.textContent = textName || "Anonymous";
 };
 
-// function onInputChange(evt) {
-//   output.textContent = textInput.value;
-//     const text = output.textContent.trim();
-//   if (text.value !== "") {
-//     return text.value
-//   } else {
-//     text.value = "Anonymous";
-//   }
-// }
-// textInput.addEventListener("input", (event) => {
-
-//   output.textContent = event.currentTarget.value;
-// });
-
-// "Anonymous"
