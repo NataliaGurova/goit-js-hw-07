@@ -9,4 +9,3 @@ categories.forEach((elem) => {
   console.log("Elements: ", count);
 });
 
-

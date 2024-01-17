@@ -4,9 +4,10 @@ const output = document.querySelector("#name-output");
 
 textInput.addEventListener("input", onInput);
   
-  function onInput(evt) {
-  const textName = evt.target.value.trim();
+  function onInput() {
+  // const textName = evt.target.value.trim();
+    const textName = textInput.value.trim();
  
- output.textContent = textName || "Anonymous";
+  output.textContent = textName || "Anonymous";
 };
 
